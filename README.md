@@ -15,17 +15,6 @@ A modern, responsive, and visually appealing HTML email template for the launch 
 
 ---
 
-## 📂 File Structure
-
-```
-email-template/
-├── indtech-smartx-launch.html   # The main HTML email template
-├── README.md                    # This documentation file
-└── assets/                      # (Optional) Images or brand assets
-```
-
----
-
 ## 🚀 How to Use
 
 1. **Download or Copy the HTML File**
