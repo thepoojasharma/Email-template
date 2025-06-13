@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product Launch - IndTech SmartX</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #1e293b;
+            line-height: 1.6;
+            width: 100%;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .email-wrapper {
+            width: 100%;
+            background-color: #f4f4f4;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+        }
+        
+        .header h1 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #e2e8f0;
+            font-size: clamp(14px, 2.5vw, 18px);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .banner {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .banner img {
+            width: 100%;
+            height: auto;
+            min-height: 250px;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .content {
+            padding: clamp(20px, 5vw, 50px);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .content h2 {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+        
+        .content > p {
+            font-size: clamp(16px, 2.5vw, 18px);
+            color: #475569;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features {
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-item {
+            background-color: #f8fafc;
+            padding: clamp(12px, 3vw, 20px);
+            border-left: 4px solid #2563eb;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+            font-size: clamp(14px, 2.2vw, 16px);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background-color: #e2e8f0;
+            transform: translateX(5px);
+        }
+        
+        .price {
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 15px;
+            border: 2px solid #f59e0b;
+        }
+        
+        .price .original {
+            text-decoration: line-through;
+            color: #64748b;
+            font-size: clamp(14px, 2.2vw, 16px);
+            margin-bottom: 10px;
+        }
+        
+        .price .offer {
+            color: #dc2626;
+            font-size: clamp(28px, 5vw, 36px);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .price .save {
+            color: #059669;
+            font-size: clamp(14px, 2.5vw, 18px);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: #ffffff;
+            padding: clamp(14px, 3vw, 18px) clamp(28px, 6vw, 40px);
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(220, 38, 38, 0.4);
+        }
+        
+        .info {
+            margin-top: 20px;
+            color: #64748b;
+            font-size: clamp(12px, 2vw, 14px);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px);
+            font-size: clamp(12px, 2vw, 14px);
+            width: 100%;
+        }
+        
+        .footer p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .footer a {
+            color: #3b82f6;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: #60a5fa;
+        }
+        
+        /* Tablet Styles */
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            .container {
+                margin: 20px auto;
+            }
+            
+            .features {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .content {
+                padding: 40px;
+            }
+        }
+        
+        /* Desktop Styles */
+        @media screen and (min-width: 1025px) {
+            .email-wrapper {
+                padding: 20px;
+            }
+            
+            .container {
+                margin: 30px auto;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+            
+            .content {
+                padding: 60px;
+            }
+            
+            .header {
+                padding: 60px 40px;
+            }
+        }
+        
+        /* Large Desktop Styles */
+        @media screen and (min-width: 1440px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .content {
+                padding: 80px;
+            }
+            
+            .features {
+                max-width: 800px;
+            }
+        }
+        
+        /* Mobile Specific Optimizations */
+        @media screen and (max-width: 480px) {
+            .email-wrapper {
+                padding: 5px;
+            }
+            
+            .container {
+                border-radius: 0;
+                margin: 0;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .price {
+                margin: 30px 0;
+                padding: 20px;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+        
+        /* High DPI Displays */
+        @media screen and (-webkit-min-device-pixel-ratio: 2), 
+               screen and (min-resolution: 192dpi) {
+            .banner img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .email-wrapper {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .cta-button {
+                background: #dc2626 !important;
+                color: white !important;
+            }
+        }
+        
+        /* Animation for smooth loading */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="container">
+            <div class="header">
+                <h1>INDTECH</h1>
+                <p>Made in India by Passionate Developers<br>Bringing Innovation from the Heart of India</p>
+            </div>
+
+            <div class="banner">
+                <img src="https://images.unsplash.com/photo-1531256379416-9f000e90aacc?w=1400&auto=format&fit=crop&q=80" alt="Indian Developer Product Banner">
+            </div>
+
+            <div class="content">
+                <h2>IndTech SmartX</h2>
+                <p>Proudly built in India, SmartX is your ultimate blend of tech innovation and simplicity. Designed by passionate Indian developers for global users who demand excellence and reliability.</p>
+
+                <div class="features">
+                    <div class="feature-item">✓ Voice Assistant in Hindi & English</div>
+                    <div class="feature-item">✓ 72-hour extended battery life</div>
+                    <div class="feature-item">✓ Designed & Manufactured in India 🇮🇳</div>
+                </div>
+
+                <div class="price">
+                    <p class="original">Regular Price: ₹24,999</p>
+                    <p class="offer">Launch Offer: ₹18,499</p>
+                    <p class="save">Save ₹6,500 - Limited Period Launch!</p>
+                </div>
+
+                <a href="#" class="cta-button">Buy Now - ₹18,499</a>
+                <p class="info">Free Shipping Across India • 7-day Return • 1-Year Warranty</p>
+            </div>
+
+            <div class="footer">
+                <p>INDTECH Innovations Pvt. Ltd.<br>
+                501, Digital Tower, Bangalore, India<br>
+                Phone: +91-9876543210 | Email: hello@indtech.in</p>
+                <p>You're receiving this email because you subscribed to our newsletter.<br>
+                <a href="#">Update preferences</a> | <a href="#">Unsubscribe</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for CTA button
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecting to purchase page...');
+        });
+
+        // Responsive image loading
+        function optimizeImages() {
+            const img = document.querySelector('.banner img');
+            const screenWidth = window.innerWidth;
+            
+            if (screenWidth < 768) {
+                img.src = img.src.replace('w=1400', 'w=800');
+            } else if (screenWidth < 1200) {
+                img.src = img.src.replace('w=1400', 'w=1200');
+            }
+        }
+
+        // Initialize on load and resize
+        window.addEventListener('load', optimizeImages);
+        window.addEventListener('resize', optimizeImages);
+    </script>
+</body>
+</html>
