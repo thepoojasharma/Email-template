@@ -57,6 +57,7 @@ A modern, responsive, and visually appealing HTML email template for the launch 
 - Always use inline CSS for maximum compatibility if sending via email (most ESPs inline automatically).
 
 ---
+[👉 Live Preview Here](https://thepoojasharma.github.io/email-template/)
 
 ## 📧 Testing
 
